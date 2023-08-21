@@ -27,7 +27,6 @@ public class ParkingGarage {
     private void initParkingSlots(String slotPrefix, int slotCount, VehicleType vehicleType) {
         for (int i=0; i<slotCount; i++){
             ParkingSlot parkingSlot = new ParkingSlot(slotPrefix + i, vehicleType);
-            parkingSlot.setFree(true);
             parkingSlot.setVehicle(null);
             parkingSlots.add(parkingSlot);
         }
@@ -35,7 +34,7 @@ public class ParkingGarage {
 
     private int getIndexOfParkedVehicle(Vehicle vehicle){
         for(int i=0; i<parkingSlots.size(); i++){
-            if(!parkingSlots.get(i).isFree()
+            if(parkingSlots.get(i).getVehicle() != null
                     && parkingSlots.get(i).getVehicle().equals(vehicle))
                 return i;
         }
@@ -48,7 +47,6 @@ public class ParkingGarage {
             System.out.println("No suitable slot found");
         } else {
             ParkingSlot slot = parkingSlots.get(index);
-            slot.setFree(false);
             slot.setVehicle(vehicle);
             parkingSlots.set(index, slot);
             System.out.println("Parked vehicle at: " + slot.getSlotId());
@@ -61,7 +59,6 @@ public class ParkingGarage {
             System.out.println("Vehicle not found");
         } else {
             ParkingSlot slot = parkingSlots.get(index);
-            slot.setFree(true);
             slot.setVehicle(null);
             parkingSlots.set(index, slot);
             System.out.println("Removed vehicle from: " + slot.getSlotId());

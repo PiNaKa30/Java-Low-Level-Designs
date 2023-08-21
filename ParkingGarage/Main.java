@@ -10,7 +10,7 @@ public class Main {
 
 //        Creating garage with initial capacities and strategy
         ParkingGarage parkingGarage = new ParkingGarage(2,2,2,
-                new LargestFirstParkingStrategy());
+                new SmallestFirstParkingStrategy());
 
 //        Creating vehicles of different types
         Vehicle v1 = new Vehicle("2WV-1", VehicleType.TWO_WHEELER);

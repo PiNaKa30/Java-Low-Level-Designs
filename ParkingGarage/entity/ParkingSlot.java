@@ -6,7 +6,6 @@ public class ParkingSlot {
 
     private final String slotId;
     private final VehicleType vehicleType;
-    private boolean isFree;
     private Vehicle vehicle;
 
     public ParkingSlot(String slotId, VehicleType vehicleType) {
@@ -20,14 +19,6 @@ public class ParkingSlot {
 
     public VehicleType getVehicleType() {
         return vehicleType;
-    }
-
-    public boolean isFree() {
-        return isFree;
-    }
-
-    public void setFree(boolean free) {
-        isFree = free;
     }
 
     public Vehicle getVehicle() {
