@@ -1,10 +1,9 @@
 import entity.ParkingGarage;
 import entity.Vehicle;
 import enums.VehicleType;
-import strategy.LargestFirstParkingStrategy;
 import strategy.SmallestFirstParkingStrategy;
 
-public class Main {
+public class ParkingGarageMain {
 
     public static void main(String[] args) {
 
